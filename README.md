@@ -1,4 +1,13 @@
-# cpsc_362_sp2025_group4
+# Tongass
+A decluttered e-commerce storefront.
+
+
+
+
+
+
+
+
 #CPSC 362 Group4
 #Project Info
 *Ecommerce
