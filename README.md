@@ -13,7 +13,8 @@
 #Project Info
 
 **Ecommerce**
-**Proccess Model: Evolutionary**
+Proccess Model: Evolutionary
+
 #Group member 
 Daniel Chen
 Hien Tran
