@@ -1,5 +1,5 @@
 # Tongass
-A decluttered e-commerce storefront.
+**A decluttered e-commerce storefront.**
 
 
 
