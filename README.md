@@ -4,3 +4,4 @@ Ecommerce
 Proccess Model: 
 Daniel Chen
 Hien Tran
+Quoc Nguyen
