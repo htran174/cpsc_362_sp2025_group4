@@ -15,3 +15,11 @@ Our goal is to develop a simplified e-commerce webstore inspired by Amazon's des
 
 **Group member:**
 Daniel Chen, Hien Tran, Quoc Nguyen, Kevin Tran
+
+**Styleguide**
+The linter that we're going to be using is 
+* EditorConfig: Helps maintain consistent coding styles across multiple developers' editors.
+* CppCheck – Focuses on detecting bugs and undefined behavior.
+* ClangFormat – Enforces consistent code formatting.(C++)
+* Pylint – A comprehensive linter detecting errors and enforcing Python best practices.
+* 
