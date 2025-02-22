@@ -12,4 +12,6 @@ int main()
         "Hello World" << std::endl;
 
     int BaD_FOrmatting_ = 0;
+
+    char* badPTR = nullptr;
 }
