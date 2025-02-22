@@ -1,22 +1,14 @@
-name: Lint # name of the action (displayed in the github interface)
-
-on: [push]
-
-jobs: # list of things to do
-  linting:
-    name: Linting # job name (unique id)
-    runs-on: ubuntu-latest # on which machine to run
+name: clang-format Check
+on: [push, pull_request]
+jobs:
+  formatting-check:
+    name: Formatting Check
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: cpp-linter/cpp-linter-action@v2
-        id: linter
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          style: 'file'  # Use .clang-format config file
-          tidy-checks: '' # Use .clang-tidy config file
-          # only 'update' a single comment in a pull request thread.
-          thread-comments: ${{ github.event_name == 'pull_request' && 'update' }}
-      - name: Fail fast?!
-        if: steps.linter.outputs.checks-failed > 0
-        run: exit 1
+    - uses: actions/checkout@v4
+    - name: Run clang-format style check for C/C++/Protobuf programs.
+      uses: jidicula/clang-format-action@v4.14.0
+      with:
+        clang-format-version: '13'
+        check-path: 'src'
+        fallback-style: 'Mozilla' # optional
