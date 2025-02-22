@@ -22,4 +22,5 @@ The linter that we're going to be using is
 * CppCheck – Focuses on detecting bugs and undefined behavior.
 * ClangFormat – Enforces consistent code formatting.(C++)
 * Pylint – A comprehensive linter detecting errors and enforcing Python best practices.
-* 
+
+  ![Image](https://github.com/user-attachments/assets/1b7dd1ff-443a-458c-aefd-2c546460ff5d)
