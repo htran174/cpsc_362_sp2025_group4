@@ -4,8 +4,12 @@
 #include <iostream>
 
 
-
+//testing linter
 int main()
 {
-    std::cout<<"Hello World" << std::endl;
+    std::cout
+        <<
+        "Hello World" << std::endl;
+
+    int BaD_FOrmatting_ = 0;
 }
