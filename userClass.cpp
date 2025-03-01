@@ -29,6 +29,7 @@ public:
     string getUsername() const { return username; }
     string getEmail() const { return email; }
     string getAddress() const { return address; }
+    string getFullName() const {return full_name;}
 
     // Setter methods
     void setUsername(string uname) 
