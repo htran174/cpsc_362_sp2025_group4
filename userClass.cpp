@@ -1,3 +1,12 @@
+/*
+======================================================================================
+                                    userClass.cpp
+                                Created by Hien Tran
+                                Last modify: 02/28/2025
+                                Bugs: Currently None
+    Purpose: Class holds user username, full name ,email, password, address
+=======================================================================================
+*/
 #include <iostream>
 
 using namespace std;
@@ -5,15 +14,16 @@ using namespace std;
 class User 
 {
 private:
-    string username;
-    string email;
-    string password;
-    string address;
+    string username; //user name
+    string full_name; //legal name
+    string email; //their email
+    string password; // password
+    string address; //address
 
 public:
     // Constructor
-    User(string uname, string mail, string pass, string addr)
-        : username(uname), email(mail), password(pass), address(addr) {}
+    User(string uname, string lname ,string mail, string pass, string addr)
+        : username(uname), email(mail), password(pass), address(addr), full_name(lname) {}
 
     // Getter methods
     string getUsername() const { return username; }
@@ -25,6 +35,12 @@ public:
     { 
         username = uname; 
     }
+
+    void setFullName(string lname)
+    {
+        full_name = lname;
+    }
+
     void setEmail(string mail) 
     { 
         //Have a function connecting to email vefication here
@@ -44,6 +60,7 @@ public:
     void displayUserInfo() const 
     {
         cout << "Username: " << username << endl;
+        cout << "Full Name: " << full_name << endl;
         cout << "Email: " << email << endl;
         cout << "Address: " << address << endl;
     }
@@ -51,7 +68,7 @@ public:
 
 int main() {
     // Creating a user object
-    User user1("hientran", "hien@example.com", "securepass123", "123 maple st");
+    User user1("htran","Hien Tran" ,"hien@example.com", "securepass123", "123 maple st");
 
     // Displaying user info
     user1.displayUserInfo();
