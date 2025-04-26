@@ -10,7 +10,7 @@ def home():
 
 @views.route('/shirts')
 def shirts():
-    return render_template('watches.html', user=current_user)
+    return render_template('shirts.html', user=current_user)
 
 @views.route('/watches')
 def watches():

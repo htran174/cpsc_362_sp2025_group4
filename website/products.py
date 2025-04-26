@@ -25,7 +25,7 @@ products = [
         "price": 30,
         "desc": "Mens Short Sleeve Crew T-Shirt",
         "image": "images/black shirt.png"
-    }
+    },
     {
         "id": 4,
         "name": "Formal Slim Fit Shirt",
