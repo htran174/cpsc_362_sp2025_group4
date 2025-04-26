@@ -8,6 +8,10 @@ views = Blueprint('views', __name__)
 def home():
     return render_template('home.html', user=current_user)
 
+@views.route('/shirts')
+def shirts():
+    return render_template('watches.html', user=current_user)
+
 @views.route('/watches')
 def watches():
     return render_template('watches.html', user=current_user)
