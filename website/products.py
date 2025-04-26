@@ -5,6 +5,7 @@ Make it so that all the products can store here to be call apon later
 '''
 
 products = [
+    #watches id 1-10
     {
         "id": 1,
         "name": "Bulova Chronograph",
@@ -19,15 +20,16 @@ products = [
         "desc": "White water-resistant sport watch with LED features.",
         "image": "images/sanda-white.png"
     },
+    #shirt id 11-20
     {
-        "id": 3,
+        "id": 11,
         "name": "Mens Short Sleeve Crew T-Shirt",
         "price": 30,
         "desc": "Mens Short Sleeve Crew T-Shirt",
         "image": "images/black shirt.png"
     },
     {
-        "id": 4,
+        "id": 12,
         "name": "Formal Slim Fit Shirt",
         "price": 63,
         "desc": "Formal Straight Point Slim Fit Shirt",
