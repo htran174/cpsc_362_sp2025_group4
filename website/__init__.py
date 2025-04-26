@@ -15,7 +15,7 @@ def create_app():
     from .views import views
     from .auth import auth
 
-    from .models import User, Payment
+    from .models import User, Payment, Product
 
     with app.app_context():
         create_database()
