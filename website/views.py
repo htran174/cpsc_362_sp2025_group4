@@ -1,12 +1,87 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, session, url_for
 from flask_login import current_user, login_required, logout_user
 
+from products import products
 views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
     return render_template('home.html', user=current_user)
 
+@views.route('/watches')
+def watches():
+    return render_template('watches.html', user=current_user)
+
 @views.route('/cart')
 def cart():
-    return render_template('cart.html', user=current_user)
+    cart = session.get('cart', [])
+    cart_items = []
+    subtotal = 0
+
+    for product_id in cart:
+        product = next((p for p in products if p['id'] == product_id), None)
+        if product:
+            cart_items.append(product)
+            subtotal += product['price']
+
+    return render_template('cart.html', cart_items=cart_items, subtotal=subtotal, user=current_user)
+
+@views.route('/product/<int:product_id>')
+def product_detail(product_id):
+    product = next((p for p in products if p['id'] == product_id), None)
+    if not product:
+        return "Product not found", 404
+    return render_template('product.html', product=product, user=current_user)
+
+
+@views.route('/add_to_cart', methods=['POST'])
+def add_to_cart():
+    product_id = request.form.get('product_id')
+    if not product_id:
+        return redirect(request.referrer)  # Go back to the same page
+
+    cart = session.get('cart', [])
+    cart.append(int(product_id))
+    session['cart'] = cart
+
+    return redirect(request.referrer)
+
+@views.route('/remove_from_cart', methods=['POST'])
+def remove_from_cart():
+    product_id = int(request.form.get('product_id'))
+
+    cart = session.get('cart', [])
+
+    if product_id in cart:
+        cart.remove(product_id)
+        session['cart'] = cart
+
+    return redirect(url_for('views.cart'))
+
+@views.route('/checkout')
+def checkout():
+    cart = session.get('cart', [])
+    cart_items = []
+    subtotal = 0
+
+    for product_id in cart:
+        product = next((p for p in products if p['id'] == product_id), None)
+        if product:
+            cart_items.append(product)
+            subtotal += product['price']
+
+    return render_template('checkout.html', cart_items=cart_items, subtotal=subtotal, user=current_user)
+
+@views.route('/place_order', methods=['POST'])
+def place_order():
+    name = request.form.get('name')
+    address = request.form.get('address')
+    email = request.form.get('email')
+    payment = request.form.get('payment')
+
+    # After order placed, clear the cart
+    session['cart'] = []
+
+    # You can pass name or whatever to thank you page if you want
+    return render_template('order_confirmation.html', name=name, user=current_user)
+

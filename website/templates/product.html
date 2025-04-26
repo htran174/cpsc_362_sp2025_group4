@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Cart</title>
+    <title>{{ product.name }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100">
 
 <!-- NAVBAR -->
 <header class="relative bg-white">
@@ -98,65 +98,110 @@
         </div>
       </div>
     </nav>
-    
-<!-- ✅ Watches Collection Title -->
-<div class="text-center mt-10">
-    <h1 class="text-3xl font-bold text-gray-900">Your Cart</h1>
+
+<!-- Product Detail Section -->
+<div class="bg-white">
+  <div class="pt-6">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb">
+      <ol class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <li>
+          <div class="flex items-center">
+            <a href="{{ url_for('views.home') }}" class="mr-2 text-sm font-medium text-gray-900">Home</a>
+            <svg class="h-5 w-4 text-gray-300" viewBox="0 0 16 20" fill="currentColor">
+              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+            </svg>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <a href="{{ url_for('views.watches') }}" class="mr-2 text-sm font-medium text-gray-900">Watches</a>
+            <svg class="h-5 w-4 text-gray-300" viewBox="0 0 16 20" fill="currentColor">
+              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+            </svg>
+          </div>
+        </li>
+        <li class="text-sm">
+          <span class="font-medium text-gray-500">{{ product.name }}</span>
+        </li>
+      </ol>
+    </nav>
+
+
+
+    <!-- Image Gallery -->
+    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+      <!-- Main Image -->
+      <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}"
+           class="hidden lg:block rounded-lg object-cover w-full h-full">
+      
+      <!-- Side Images (reusing main image for now) -->
+      <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}"
+             class="rounded-lg object-cover">
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}"
+             class="rounded-lg object-cover">
+      </div>
+
+      <!-- Big feature Image -->
+      <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}"
+           class="rounded-lg object-cover w-full h-full lg:aspect-auto">
+    </div>
+
+    <!-- Product Info -->
+    <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8">
+      
+      <!-- Title -->
+      <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ product.name }}</h1>
+      </div>
+
+      <!-- Price and Add to Cart -->
+      <div class="mt-4 lg:row-span-3 lg:mt-0">
+        <h2 class="sr-only">Product information</h2>
+        <p class="text-3xl tracking-tight text-gray-900">${{ product.price }}</p>
+
+        <!-- Add to Cart Form -->
+        <form method="POST" action="{{ url_for('views.add_to_cart') }}" class="mt-10">
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+          <button type="submit" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Add to Cart
+          </button>
+        </form>
+      </div>
+
+      <!-- Description -->
+      <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
+        <div>
+          <h3 class="sr-only">Description</h3>
+          <div class="space-y-6">
+            <p class="text-base text-gray-900">{{ product.desc }}</p>
+          </div>
+        </div>
+
+        <!-- Highlights (Optional Static Section) -->
+        <div class="mt-10">
+          <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+          <ul role="list" class="mt-4 list-disc space-y-2 pl-4 text-sm">
+            <li class="text-gray-400"><span class="text-gray-600">Durable quality materials</span></li>
+            <li class="text-gray-400"><span class="text-gray-600">Water-resistant design</span></li>
+            <li class="text-gray-400"><span class="text-gray-600">Stylish for all occasions</span></li>
+          </ul>
+        </div>
+
+        <!-- Details (Optional Static Section) -->
+        <div class="mt-10">
+          <h2 class="text-sm font-medium text-gray-900">Details</h2>
+          <div class="mt-4 space-y-6">
+            <p class="text-sm text-gray-600">Every watch we offer is designed with precision and craftsmanship, perfect for everyday wear or special events.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
-
-<!-- Main Cart Content -->
-<div class="max-w-4xl mx-auto py-12 px-6">
-
-    {% if cart_items %}
-        <div class="space-y-6">
-
-            <!-- Loop through all cart items -->
-            {% for item in cart_items %}
-            <div class="flex items-center bg-white p-4 rounded-lg shadow">
-                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}" class="w-24 h-24 object-cover rounded-md">
-                
-                <div class="ml-4 flex-1">
-                    <h2 class="text-lg font-bold text-gray-900">{{ item.name }}</h2>
-                    <p class="text-gray-600">${{ item.price }}</p>
-                </div>
-
-                <!-- Remove from Cart Button -->
-                <form action="{{ url_for('views.remove_from_cart') }}" method="POST">
-                    <input type="hidden" name="product_id" value="{{ item.id }}">
-                    <button type="submit" class="text-red-600 hover:text-red-800 font-semibold ml-4">
-                        Remove
-                    </button>
-                </form>
-            </div>
-            {% endfor %}
-
-        </div>
-
-        <!-- Subtotal Section -->
-        <div class="mt-10 border-t border-gray-300 pt-6 text-right">
-            <h2 class="text-xl font-bold text-gray-800">
-                Subtotal: ${{ "%.2f"|format(subtotal) }}
-            </h2>
-        </div>
-
-        <!-- Checkout Button -->
-        <div class="mt-10 text-right">
-            <a href="{{ url_for('views.checkout') }}" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
-                Proceed to Checkout
-            </a>
-        </div>
-
-    {% else %}
-        <!-- If cart is empty -->
-        <p class="text-gray-600">Your cart is empty.</p>
-
-        <div class="mt-6">
-            <a href="{{ url_for('views.home') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
-                Continue Browse
-            </a>
-        </div>
-    {% endif %}
-
 </div>
 
 </body>

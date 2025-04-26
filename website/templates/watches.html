@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Cart</title>
+    <title>Watches</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen">
@@ -101,62 +101,61 @@
     
 <!-- ✅ Watches Collection Title -->
 <div class="text-center mt-10">
-    <h1 class="text-3xl font-bold text-gray-900">Your Cart</h1>
+    <h1 class="text-3xl font-bold text-gray-900">Watches Collection</h1>
   </div>
+  
 
-<!-- Main Cart Content -->
-<div class="max-w-4xl mx-auto py-12 px-6">
+<!-- Watches Products Section -->
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our Watches</h2>
 
-    {% if cart_items %}
-        <div class="space-y-6">
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-            <!-- Loop through all cart items -->
-            {% for item in cart_items %}
-            <div class="flex items-center bg-white p-4 rounded-lg shadow">
-                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}" class="w-24 h-24 object-cover rounded-md">
-                
-                <div class="ml-4 flex-1">
-                    <h2 class="text-lg font-bold text-gray-900">{{ item.name }}</h2>
-                    <p class="text-gray-600">${{ item.price }}</p>
-                </div>
-
-                <!-- Remove from Cart Button -->
-                <form action="{{ url_for('views.remove_from_cart') }}" method="POST">
-                    <input type="hidden" name="product_id" value="{{ item.id }}">
-                    <button type="submit" class="text-red-600 hover:text-red-800 font-semibold ml-4">
-                        Remove
-                    </button>
-                </form>
-            </div>
-            {% endfor %}
-
+      <!-- Bulova Black Watch -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=1) }}">
+          <img src="{{ url_for('static', filename='images/bulova-black.png') }}" 
+               alt="Bulova Black Watch" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=1) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Bulova Chronograph
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Black Stainless Steel</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$289</p>
         </div>
+      </div>
 
-        <!-- Subtotal Section -->
-        <div class="mt-10 border-t border-gray-300 pt-6 text-right">
-            <h2 class="text-xl font-bold text-gray-800">
-                Subtotal: ${{ "%.2f"|format(subtotal) }}
-            </h2>
+      <!-- Sanda White Sport Watch -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=2) }}">
+          <img src="{{ url_for('static', filename='images/sanda-white.png') }}" 
+               alt="Sanda White Watch" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=2) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Sanda Sport Watch
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Water Resistant - White</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$59</p>
         </div>
+      </div>
 
-        <!-- Checkout Button -->
-        <div class="mt-10 text-right">
-            <a href="{{ url_for('views.checkout') }}" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
-                Proceed to Checkout
-            </a>
-        </div>
-
-    {% else %}
-        <!-- If cart is empty -->
-        <p class="text-gray-600">Your cart is empty.</p>
-
-        <div class="mt-6">
-            <a href="{{ url_for('views.home') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">
-                Continue Browse
-            </a>
-        </div>
-    {% endif %}
-
+    </div>
+  </div>
 </div>
 
 </body>
