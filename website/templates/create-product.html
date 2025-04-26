@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Product Test Page</title>
+</head>
+<body>
+  <form action="{{ url_for('views.create_product') }}" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" name="price" id="price" min="0" max="100000" step="0.01" required>
+    </div>
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="0" max="1000000" step="1" required>
+    </div>
+    <div class="mb-3">
+        <label for="category" class="form-label">Category:</label>
+        <input type="text" id="category" name="category" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="subcategory" class="form-label">Subcategory:</label>
+        <input type="text" id="subcategory" name="subcategory" class="form-control" required>
+    </div>
+      <div class="mb-3">
+        <label for="variant" class="form-label">Variant:</label>
+        <input type="text" id="variant" name="variant" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="is_default_variant" class="form-label">Is a default variant:</label>
+        <input type="checkbox" id="is_default_variant" name="is_default_variant" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="is_variant_of" class="form-label">Is a variant of:</label>
+        <input type="text" id="is_variant_of" name="is_variant_of" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+</body>
+</html>

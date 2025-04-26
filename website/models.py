@@ -14,16 +14,22 @@ class Payment(db.Model):
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    default_variant_id = db.Column(db.Integer, db.ForeignKey('product.id'))
     name = db.Column(db.String(80), unique=True, nullable=False)
     price = db.Column(db.Numeric(10, 2), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
     category = db.Column(db.String(80), nullable=False)
     subcategory = db.Column(db.String(80), nullable=False)
     variant = db.Column(db.String(80), nullable=False)
     is_default_variant = db.Column(db.Boolean, nullable=False)
     is_variant_of = db.Relationship('Product', remote_side=[id], lazy=True)
+    default_variant_id = db.Column(db.Integer, db.ForeignKey('product.id'))
 
     def validate_variants(self):
         if self.is_variant_of & self.is_default_variant:
             raise ValueError('Something is a default variant and a variant of something')
+        return True
+
+    def validate_nonnegative_quantity(self):
+        if self.quantity < 0:
+            raise ValueError('Quantity cannot be negative')
         return True
