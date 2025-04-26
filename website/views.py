@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, session, url_for
 from flask_login import current_user, login_required, logout_user
 
-from products import products
+from .products import products
 views = Blueprint('views', __name__)
 
 @views.route('/')
