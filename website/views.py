@@ -1,7 +1,12 @@
+from unicodedata import category
+
 from flask import Blueprint, render_template, request, redirect, session, url_for
 from flask_login import current_user, login_required, logout_user
 
+from . import db
 from products import products
+from website.models import Product
+
 views = Blueprint('views', __name__)
 
 @views.route('/')
@@ -85,3 +90,31 @@ def place_order():
     # You can pass name or whatever to thank you page if you want
     return render_template('order_confirmation.html', name=name, user=current_user)
 
+# TO DO: ALLOW USER TO UPLOAD PICTURES OF PRODUCT
+@views.route('/create-product', methods=['POST', 'GET'])
+def create_product():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        price = request.form.get('price')
+        quantity = request.form.get('quantity')
+        category = request.form.get('category')
+        subcategory = request.form.get('subcategory')
+        variant = request.form.get('variant')
+        is_default_variant = request.form.get('is_default_variant')
+        is_variant_of = request.form.get('is_variant_of')
+
+        if is_default_variant == 'on':
+            is_default_variant = True
+        else:
+            is_default_variant = False
+
+        default_variant_id = None
+        if is_variant_of:
+            default_variant_id = Product.query.filter_by(name=is_variant_of).first().id
+
+        product = Product(name=name, price=price, quantity=quantity, category=category, subcategory=subcategory, variant=variant, is_default_variant=is_default_variant, default_variant_id=default_variant_id)
+        db.session.add(product)
+        db.session.commit()
+        return redirect(url_for('views.home'))
+
+    return render_template('create-product.html')
