@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shirts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+<!-- NAVBAR -->
+<header class="relative bg-white">
+    <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-b border-gray-200">
+        <div class="h-16 flex items-center justify-between">
+  
+          <!-- LOGO -->
+          <div class="flex items-center">
+            <a href="{{ url_for('views.home') }}">
+              <span class="text-xl font-bold text-indigo-600">Tograss</span>
+            </a>
+          </div>
+  
+          <!-- MENU -->
+          <div class="hidden h-full lg:flex items-center space-x-8">
+  
+            <!-- MEN DROPDOWN -->
+            <div class="relative group flex items-center">
+                <div class="flex items-center">
+                  <button type="button" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">
+                    Men
+                    <svg class="ml-1 h-5 w-5 text-gray-400 group-hover:text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02l3.71 3.71 3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+            
+                <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
+                  <a href="{{ url_for('views.shirts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shirts</a>
+                  <a href="{{ url_for('views.mpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+                  <a href="{{ url_for('views.jackets') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Jackets</a>
+                </div>
+              </div>
+            
+              <!-- WOMEN DROPDOWN -->
+              <div class="relative group flex items-center">
+                <div class="flex items-center">
+                  <button type="button" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">
+                    Women
+                    <svg class="ml-1 h-5 w-5 text-gray-400 group-hover:text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02l3.71 3.71 3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+            
+                <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
+                  <a href="{{ url_for('views.dresses') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
+                  <a href="{{ url_for('views.tops') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
+                  <a href="{{ url_for('views.wpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+                </div>
+              </div>
+            
+              <!-- ACCESSORIES DROPDOWN -->
+              <div class="relative group flex items-center">
+                <div class="flex items-center">
+                  <button type="button" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">
+                    Accessories
+                    <svg class="ml-1 h-5 w-5 text-gray-400 group-hover:text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02l3.71 3.71 3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+            
+                <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
+                  <a href="{{ url_for('views.watches') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Watches</a>
+                  <a href="{{ url_for('views.rings') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
+                  <a href="{{ url_for('views.necklaces') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
+                </div>
+              </div>
+          
+          </div>
+  
+          <!-- LOGIN / CART -->
+          <div class="flex items-center space-x-6">
+            {% if user.is_authenticated %}
+              <a href="{{ url_for('auth.logout') }}" class="text-sm font-medium text-gray-700 hover:text-gray-800">Log out</a>
+            {% else %}
+              <a href="{{ url_for('auth.login') }}" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+              <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+              <a href="{{ url_for('auth.signup') }}" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+            {% endif %}
+            <a href="{{ url_for('views.cart') }}" class="group -m-2 flex items-center p-2">
+              <svg class="w-6 h-6 text-gray-400 group-hover:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l1-5H6l1 5zm5 7a2 2 0 100-4 2 2 0 000 4zm6-2a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+            </a>
+          </div>
+  
+        </div>
+      </div>
+    </nav>
+    
+<!-- ✅ Tops Collection Title -->
+<div class="text-center mt-10">
+    <h1 class="text-3xl font-bold text-gray-900">Tops Collection</h1>
+  </div>
+  
+
+<!-- Pants Products Section -->
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our Tops</h2>
+
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+      <!-- Rambler Jacket -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=31) }}">
+          <img src="{{ url_for('static', filename='images/rambler jacket.png') }}" 
+               alt="Mens Short Sleeve Crew T-Shirt" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=31) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Dri Duck Rambler Jacket
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Saddle</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$140</p>
+        </div>
+      </div>
+
+      <!-- Slim Fit Shirt -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=12) }}">
+          <img src="{{ url_for('static', filename='images/slim fit shirt.jpg') }}" 
+               alt="Slim fit shirt" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=4) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Formal Straight Point Slim Fit Shirt
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">White</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$63</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

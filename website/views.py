@@ -12,9 +12,37 @@ def home():
 def shirts():
     return render_template('shirts.html', user=current_user)
 
+@views.route('/mpants')
+def mpants():
+    return render_template('mpants.html', user=current_user)
+
+@views.route('/jackets')
+def jackets():
+    return render_template('jackets.html', user=current_user)
+
+@views.route('/dresses')
+def dresses():
+    return render_template('dresses.html', user=current_user)
+
+@views.route('/tops')
+def tops():
+    return render_template('tops.html', user=current_user)
+
+@views.route('/wpants')
+def wpants():
+    return render_template('wpants.html', user=current_user)
+
 @views.route('/watches')
 def watches():
     return render_template('watches.html', user=current_user)
+
+@views.route('/rings')
+def rings():
+    return render_template('rings.html', user=current_user)
+
+@views.route('/necklaces')
+def necklaces():
+    return render_template('necklaces.html', user=current_user)
 
 @views.route('/cart')
 def cart():

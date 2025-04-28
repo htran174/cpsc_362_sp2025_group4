@@ -52,16 +52,15 @@
               <button type="button" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">
                 Men
                 <svg class="ml-1 h-5 w-5 text-gray-400 group-hover:text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06L10 14.06l-4.77-4.77a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02l3.71 3.71 3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                 </svg>
               </button>
             </div>
-          
-            <!-- dropdown -->
+        
             <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
               <a href="{{ url_for('views.shirts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shirts</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Jackets</a>
+              <a href="{{ url_for('views.mpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+              <a href="{{ url_for('views.jackets') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Jackets</a>
             </div>
           </div>
         
@@ -77,9 +76,9 @@
             </div>
         
             <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+              <a href="{{ url_for('views.dresses') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
+              <a href="{{ url_for('views.tops') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
+              <a href="{{ url_for('views.wpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
             </div>
           </div>
         
@@ -96,8 +95,8 @@
         
             <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
               <a href="{{ url_for('views.watches') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Watches</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
+              <a href="{{ url_for('views.rings') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
+              <a href="{{ url_for('views.necklaces') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
             </div>
           </div>
         

@@ -53,9 +53,9 @@
               </div>
           
               <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+                <a href="{{ url_for('views.dresses') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
+                <a href="{{ url_for('views.tops') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
+                <a href="{{ url_for('views.wpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
               </div>
             </div>
           
@@ -72,8 +72,8 @@
           
               <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
                 <a href="{{ url_for('views.watches') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Watches</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
+                <a href="{{ url_for('views.rings') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
+                <a href="{{ url_for('views.necklaces') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
               </div>
             </div>
           
@@ -99,58 +99,58 @@
       </div>
     </nav>
     
-<!-- ✅ Shirt Collection Title -->
+<!-- ✅ Rings Collection Title -->
 <div class="text-center mt-10">
-    <h1 class="text-3xl font-bold text-gray-900">Shirt Collection</h1>
+    <h1 class="text-3xl font-bold text-gray-900">Rings Collection</h1>
   </div>
   
 
-<!-- Shirts Products Section -->
+<!-- Pants Products Section -->
 <div class="bg-white">
   <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our Shirts</h2>
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our Rings</h2>
 
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-      <!-- Black Shirt -->
+      <!-- Rambler Jacket -->
       <div class="group relative">
-        <a href="{{ url_for('views.product_detail', product_id=11) }}">
-          <img src="{{ url_for('static', filename='images/black shirt.png') }}" 
+        <a href="{{ url_for('views.product_detail', product_id=31) }}">
+          <img src="{{ url_for('static', filename='images/rambler jacket.png') }}" 
                alt="Mens Short Sleeve Crew T-Shirt" 
                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
         </a>
         <div class="mt-4 flex justify-between">
           <div>
             <h3 class="text-sm text-gray-700">
-              <a href="{{ url_for('views.product_detail', product_id=3) }}">
+              <a href="{{ url_for('views.product_detail', product_id=31) }}">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Mens Short Sleeve Crew T-Shirt
+                Dri Duck Rambler Jacket
               </a>
             </h3>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
+            <p class="mt-1 text-sm text-gray-500">Saddle</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$30</p>
+          <p class="text-sm font-medium text-gray-900">$140</p>
         </div>
       </div>
 
-      <!-- Slim Fit Shirt -->
+      <!-- Suede Trucker Jacket -->
       <div class="group relative">
         <a href="{{ url_for('views.product_detail', product_id=12) }}">
-          <img src="{{ url_for('static', filename='images/slim fit shirt.jpg') }}" 
-               alt="Slim fit shirt" 
+          <img src="{{ url_for('static', filename='images/suede jacket.png') }}" 
+               alt="Suede Trucker Jacket" 
                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
         </a>
         <div class="mt-4 flex justify-between">
           <div>
             <h3 class="text-sm text-gray-700">
-              <a href="{{ url_for('views.product_detail', product_id=4) }}">
+              <a href="{{ url_for('views.product_detail', product_id=32) }}">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Formal Straight Point Slim Fit Shirt
+                Suede Trucker jacket
               </a>
             </h3>
-            <p class="mt-1 text-sm text-gray-500">White</p>
+            <p class="mt-1 text-sm text-gray-500">Dusty</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$63</p>
+          <p class="text-sm font-medium text-gray-900">$380</p>
         </div>
       </div>
 
