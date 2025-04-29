@@ -1,3 +1,5 @@
+import functools
+
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -61,3 +63,13 @@ def logout():
     logout_user()
     flash('You have been logged out.', category='success')
     return redirect(url_for('auth.login'))
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(*args, **kwargs):
+        if current_user.is_authenticated:
+            return view(*args, **kwargs)
+        else:
+            flash('You must be logged in to view this page.', category='danger')
+            return redirect(url_for('auth.login'))
+    return wrapped_view
