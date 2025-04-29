@@ -71,6 +71,14 @@ products = [
         "image": "images/iron lightweight shirt.png"
     },
     {
+        "id": 18,
+        "name": "Men's White Long Sleeve Shirt",
+        "price": 65,
+        "desc": "White Long Sleeve Shirt",
+        "image": "images/white long sleeve range shirt.png"
+    },
+    #mens pants 21-30
+    {
         "id": 21,
         "name": "Khaki Pants",
         "price": 50,
@@ -85,6 +93,49 @@ products = [
         "image": "images/officer chino pant.png"
     },
     {
+        "id": 23,
+        "name": "Chino Officer Pant",
+        "price": 250,
+        "desc": "Mens Classic Khaki Pants",
+        "image": "images/officer chino pant.png"
+    },
+    {
+        "id": 24,
+        "name": "Chino Officer Pant",
+        "price": 250,
+        "desc": "Mens Classic Khaki Pants",
+        "image": "images/officer chino pant.png"
+    },
+    {
+        "id": 25,
+        "name": "Chino Officer Pant",
+        "price": 250,
+        "desc": "Mens Classic Khaki Pants",
+        "image": "images/officer chino pant.png"
+    },
+    {
+        "id": 26,
+        "name": "Chino Officer Pant",
+        "price": 250,
+        "desc": "Mens Classic Khaki Pants",
+        "image": "images/officer chino pant.png"
+    },
+    {
+        "id": 27,
+        "name": "Chino Officer Pant",
+        "price": 250,
+        "desc": "Mens Classic Khaki Pants",
+        "image": "images/officer chino pant.png"
+    },
+    {
+        "id": 28,
+        "name": "Chino Officer Pant",
+        "price": 250,
+        "desc": "Mens Classic Khaki Pants",
+        "image": "images/officer chino pant.png"
+    },
+    #jackets 31-40
+    {
         "id": 31,
         "name": "Dri Duck Rambler Jacket",
         "price": 250,
@@ -93,6 +144,48 @@ products = [
     },
     {
         "id": 32,
+        "name": "Suede Trucker Jacket",
+        "price": 250,
+        "desc": "Suede Trucker Jacket",
+        "image": "images/suede jacket.png"
+    },
+    {
+        "id": 33,
+        "name": "Suede Trucker Jacket",
+        "price": 250,
+        "desc": "Suede Trucker Jacket",
+        "image": "images/suede jacket.png"
+    },
+    {
+        "id": 34,
+        "name": "Suede Trucker Jacket",
+        "price": 250,
+        "desc": "Suede Trucker Jacket",
+        "image": "images/suede jacket.png"
+    },
+    {
+        "id": 35,
+        "name": "Suede Trucker Jacket",
+        "price": 250,
+        "desc": "Suede Trucker Jacket",
+        "image": "images/suede jacket.png"
+    },
+    {
+        "id": 36,
+        "name": "Suede Trucker Jacket",
+        "price": 250,
+        "desc": "Suede Trucker Jacket",
+        "image": "images/suede jacket.png"
+    },
+    {
+        "id": 37,
+        "name": "Suede Trucker Jacket",
+        "price": 250,
+        "desc": "Suede Trucker Jacket",
+        "image": "images/suede jacket.png"
+    },
+    {
+        "id": 38,
         "name": "Suede Trucker Jacket",
         "price": 250,
         "desc": "Suede Trucker Jacket",
