@@ -7,6 +7,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
     payments = db.relationship('Payment', backref='user', lazy=True)
+    full_name = db.Column(db.String(100), nullable=False)
+    birthday = db.Column(db.Date, nullable=False)
 
 class Payment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
