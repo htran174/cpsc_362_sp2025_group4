@@ -141,7 +141,18 @@ def place_order():
 @views.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', user=current_user)
+    return render_template('profile/summary.html', user=current_user, current_tab='summary')
+
+@views.route('/profile/settings')
+@login_required
+def profile_settings():
+    return render_template('profile/settings.html', user=current_user, current_tab='settings')
+
+@views.route('/profile/orders')
+@login_required
+def profile_orders():
+    return render_template('profile/orders.html', user=current_user, current_tab='orders')
+
 
 @views.route('/logout')
 @login_required
