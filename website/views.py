@@ -1,7 +1,13 @@
+import os
+
 from flask import Blueprint, render_template, request, redirect, session, url_for
 from flask_login import current_user, login_required, logout_user
+from werkzeug.utils import secure_filename
 
+from . import db
+from .models import Product, ProductVariant
 from .products import products
+
 views = Blueprint('views', __name__)
 
 @views.route('/')
