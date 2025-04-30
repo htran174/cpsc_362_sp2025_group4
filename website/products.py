@@ -36,6 +36,41 @@ products = [
         "image": "images/slim fit shirt.jpg"
     },
     {
+        "id": 13,
+        "name": "Long Sleeve Stretch Dress Shirt",
+        "price": 40,
+        "desc": "Long Sleeve Stretch Dress Shirts Casual Button Down Shirt",
+        "image": "images/long sleeve dress shirt.png"
+    },
+    {
+        "id": 14,
+        "name": "Summit Flannel Shirt",
+        "price": 98,
+        "desc": "Navy Blue Summit Flannel Shirt",
+        "image": "images/summit flannel shirt.png"
+    },
+    {
+        "id": 15,
+        "name": "Polo Cotton Vneck Shirt",
+        "price": 30,
+        "desc": "Grey Polo Cotton Vneck Shirt",
+        "image": "images/Polo Cotton Vneck Shirt.png"
+    },
+    {
+        "id": 16,
+        "name": "Cotton Relaxed Fit Long Sleeve Shirt",
+        "price": 60,
+        "desc": "Medium Blue Cotton Relaxed Fit Long Sleeve Shirt",
+        "image": "images/Cotton Relaxed Fit Long Sleeve Shirt.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Men's Lightweight Shirt",
+        "price": 65,
+        "desc": "Iron Lightweight Shirt",
+        "image": "images/iron lightweight shirt.png"
+    },
+    {
         "id": 21,
         "name": "Khaki Pants",
         "price": 50,
