@@ -59,9 +59,9 @@ def product_detail(product_id):
     from_page = request.args.get("from_page", "/")  # default to home
     return render_template('product.html', product=product, from_page=from_page, user=current_user)
 
-@views.route('/viewcart')
+@views.route('/cart')
 @login_required
-def viewcart():
+def cart():
     cart = CartItem.query.filter_by(user_id=current_user.id).all()
     cart_items = []
     subtotal = 0
