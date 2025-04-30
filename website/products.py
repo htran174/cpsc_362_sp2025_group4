@@ -94,45 +94,45 @@ products = [
     },
     {
         "id": 23,
-        "name": "Chino Officer Pant",
+        "name": "Stretch Pants",
         "price": 250,
-        "desc": "Mens Classic Khaki Pants",
-        "image": "images/officer chino pant.png"
+        "desc": "Beige Stretch Pants",
+        "image": "images/stretch pants.png"
     },
     {
         "id": 24,
-        "name": "Chino Officer Pant",
-        "price": 250,
-        "desc": "Mens Classic Khaki Pants",
-        "image": "images/officer chino pant.png"
+        "name": "Relax Fit Cargo Pants",
+        "price": 90,
+        "desc": "Gray Relax Fit Cargo Pants",
+        "image": "images/relaxed fit cargo pants.jpg"
     },
     {
         "id": 25,
-        "name": "Chino Officer Pant",
-        "price": 250,
-        "desc": "Mens Classic Khaki Pants",
-        "image": "images/officer chino pant.png"
+        "name": "Standard Fit Jeans",
+        "price": 85,
+        "desc": "Mens Standard Fit Jeans",
+        "image": "images/standard fit jeans.jpg"
     },
     {
         "id": 26,
-        "name": "Chino Officer Pant",
-        "price": 250,
-        "desc": "Mens Classic Khaki Pants",
-        "image": "images/officer chino pant.png"
+        "name": "Relaxed Fit Cargo Shorts",
+        "price": 65,
+        "desc": "Relaxed Fit Cargo Shorts",
+        "image": "images/relaxed fit cargo shorts.jpg"
     },
     {
         "id": 27,
-        "name": "Chino Officer Pant",
-        "price": 250,
-        "desc": "Mens Classic Khaki Pants",
-        "image": "images/officer chino pant.png"
+        "name": "Dress Pants",
+        "price": 225,
+        "desc": "Wool Dress Pants",
+        "image": "images/dress pants.jpg"
     },
     {
         "id": 28,
-        "name": "Chino Officer Pant",
-        "price": 250,
-        "desc": "Mens Classic Khaki Pants",
-        "image": "images/officer chino pant.png"
+        "name": "Drawstring Linen Pants",
+        "price": 200,
+        "desc": "Drawstring Linen Pants",
+        "image": "images/drawstring linen pants.jpg"
     },
     #jackets 31-40
     {
@@ -151,45 +151,45 @@ products = [
     },
     {
         "id": 33,
-        "name": "Suede Trucker Jacket",
-        "price": 250,
-        "desc": "Suede Trucker Jacket",
-        "image": "images/suede jacket.png"
+        "name": "Mens Rain Jacket",
+        "price": 220,
+        "desc": "Mens Rain Jacket",
+        "image": "images/mens rain jacket.jpg"
     },
     {
         "id": 34,
-        "name": "Suede Trucker Jacket",
-        "price": 250,
-        "desc": "Suede Trucker Jacket",
-        "image": "images/suede jacket.png"
+        "name": "Mens Softshell Jacket",
+        "price": 30,
+        "desc": "Mens Softshell Jacket",
+        "image": "images/softshell jacket.png"
     },
     {
         "id": 35,
-        "name": "Suede Trucker Jacket",
-        "price": 250,
-        "desc": "Suede Trucker Jacket",
-        "image": "images/suede jacket.png"
+        "name": "Bomber Jacket",
+        "price": 140,
+        "desc": "Bomber Jacket",
+        "image": "images/bomber jacket.png"
     },
     {
         "id": 36,
-        "name": "Suede Trucker Jacket",
-        "price": 250,
-        "desc": "Suede Trucker Jacket",
-        "image": "images/suede jacket.png"
+        "name": "Puffer Jacket",
+        "price": 170,
+        "desc": "Water Repellent Puffer Jacket",
+        "image": "images/puffer jacket.jpg"
     },
     {
         "id": 37,
-        "name": "Suede Trucker Jacket",
+        "name": "Denim Jacket",
         "price": 250,
-        "desc": "Suede Trucker Jacket",
-        "image": "images/suede jacket.png"
+        "desc": "Mens Denim Jacket",
+        "image": "images/denim jacket.jpg"
     },
     {
         "id": 38,
-        "name": "Suede Trucker Jacket",
-        "price": 250,
-        "desc": "Suede Trucker Jacket",
-        "image": "images/suede jacket.png"
+        "name": "Regular Fit Cotton Jacket",
+        "price": 70,
+        "desc": "Regular Fit Cotton Jacket",
+        "image": "images/regular fit cotton jacket.jpg"
     },
     #Necklaces ID: 51-60
     {
