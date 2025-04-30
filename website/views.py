@@ -50,20 +50,6 @@ def rings():
 def necklaces():
     return render_template('necklaces.html', user=current_user)
 
-@views.route('/cart')
-def cart():
-    cart = session.get('cart', [])
-    cart_items = []
-    subtotal = 0
-
-    for product_id in cart:
-        product = next((p for p in products if p['id'] == product_id), None)
-        if product:
-            cart_items.append(product)
-            subtotal += product['price']
-
-    return render_template('cart.html', cart_items=cart_items, subtotal=subtotal, user=current_user)
-
 @views.route('/product/<int:product_id>')
 def product_detail(product_id):
     product = next((p for p in products if p['id'] == product_id), None)
