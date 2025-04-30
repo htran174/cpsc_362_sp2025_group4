@@ -73,9 +73,9 @@ def product_detail(product_id):
     from_page = request.args.get("from_page", "/")  # default to home
     return render_template('product.html', product=product, from_page=from_page, user=current_user)
 
-@views.route('/cart')
+@views.route('/viewcart')
 @login_required
-def cart():
+def viewcart():
     cart = CartItem.query.filter_by(user_id=current_user.id).all()
     cart_items = []
     subtotal = 0
@@ -151,3 +151,8 @@ def place_order():
 
     # You can pass name or whatever to thank you page if you want
     return render_template('order_confirmation.html', name=name, user=current_user)
+
+
+@views.route('/catalog')
+def catalog():
+    return render_template('catalog.html', products=products, user=current_user)
