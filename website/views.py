@@ -44,6 +44,10 @@ def rings():
 def necklaces():
     return render_template('necklaces.html', user=current_user)
 
+@views.route('/catalog')
+def catalog():
+    return render_template('catalog.html', products=products, user=current_user)
+
 @views.route('/cart')
 def cart():
     cart = session.get('cart', [])
