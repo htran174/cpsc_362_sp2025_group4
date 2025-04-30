@@ -11,25 +11,47 @@ class User(db.Model, UserMixin):
 class Payment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     price = db.Column(db.Numeric(10, 2), nullable=False)
-    quantity = db.Column(db.Integer, nullable=False)
+    stock = db.Column(db.Integer, nullable=False)
     category = db.Column(db.String(80), nullable=False)
     subcategory = db.Column(db.String(80), nullable=False)
-    variant = db.Column(db.String(80), nullable=False)
-    is_default_variant = db.Column(db.Boolean, nullable=False)
-    is_variant_of = db.Relationship('Product', remote_side=[id], lazy=True)
-    default_variant_id = db.Column(db.Integer, db.ForeignKey('product.id'))
+    image_dir = db.Column(db.String(320), nullable=False)
+    thumbnail_dir = db.Column(db.String(320), nullable=False)
 
-    def validate_variants(self):
-        if self.is_variant_of & self.is_default_variant:
-            raise ValueError('Something is a default variant and a variant of something')
+    def validate_nonnegative_stock(self):
+        if self.stock < 0:
+            raise ValueError('Stock cannot be negative')
         return True
 
-    def validate_nonnegative_quantity(self):
-        if self.quantity < 0:
-            raise ValueError('Quantity cannot be negative')
+class ProductVariant(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    variant_name = db.Column(db.String(80), nullable=False)
+    price = db.Column(db.Numeric(10, 2), nullable=False)
+    stock = db.Column(db.Integer, nullable=False)
+    image_dir = db.Column(db.String(320), nullable=False)
+    thumbnail_dir = db.Column(db.String(320), nullable=False)
+
+    base_product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+
+    def validate_nonnegative_stock(self):
+        if self.stock < 0:
+            raise ValueError('Stock cannot be negative')
+        return True
+
+class CartItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    legacy_id = db.Column(db.Integer)
+    quantity = db.Column(db.Integer, nullable=False)
+
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
+    variant_id = db.Column(db.Integer, db.ForeignKey('product_variant.id'))
+
+    def validate_product_id(self):
+        if not self.product_id and not self.legacy_id and not self.variant_id:
+            raise ValueError('One product ID type required')
         return True
