@@ -7,8 +7,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen">
 
-<!-- NAVBAR -->
-<header class="relative bg-white">
+  <header class="relative bg-white">
     <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="border-b border-gray-200">
         <div class="h-16 flex items-center justify-between">
@@ -35,9 +34,9 @@
               </div>
           
               <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shirts</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Jackets</a>
+                <a href="{{ url_for('views.shirts') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shirts</a>
+                <a href="{{ url_for('views.mpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+                <a href="{{ url_for('views.jackets') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Jackets</a>
               </div>
             </div>
           
@@ -53,9 +52,9 @@
               </div>
           
               <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
+                <a href="{{ url_for('views.dresses') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a>
+                <a href="{{ url_for('views.tops') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a>
+                <a href="{{ url_for('views.wpants') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pants</a>
               </div>
             </div>
           
@@ -72,8 +71,8 @@
           
               <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
                 <a href="{{ url_for('views.watches') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Watches</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
+                <a href="{{ url_for('views.rings') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rings</a>
+                <a href="{{ url_for('views.necklaces') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Necklaces</a>
               </div>
             </div>
           
@@ -99,7 +98,7 @@
       </div>
     </nav>
     
-<!-- ✅ Watches Collection Title -->
+<!-- Title -->
 <div class="text-center mt-10">
     <h1 class="text-3xl font-bold text-gray-900">Your Cart</h1>
   </div>
