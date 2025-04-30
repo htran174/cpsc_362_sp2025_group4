@@ -118,7 +118,13 @@
         </li>
         <li>
           <div class="flex items-center">
-            <a href="{{ url_for('views.watches') }}" class="mr-2 text-sm font-medium text-gray-900">Watches</a>
+            <a href="{{ from_page }}" class="mr-2 text-sm font-medium text-gray-900">
+              {% if from_page == '/' %}
+                Home
+              {% else %}
+                {{ from_page.strip('/')|capitalize }}
+              {% endif %}
+            </a>
             <svg class="h-5 w-4 text-gray-300" viewBox="0 0 16 20" fill="currentColor">
               <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
             </svg>
