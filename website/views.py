@@ -63,7 +63,9 @@ def product_detail(product_id):
     product = next((p for p in products if p['id'] == product_id), None)
     if not product:
         return "Product not found", 404
-    return render_template('product.html', product=product, user=current_user)
+
+    from_page = request.args.get("from_page", "/")  # default to home
+    return render_template('product.html', product=product, from_page=from_page, user=current_user)
 
 
 @views.route('/add_to_cart', methods=['POST'])
