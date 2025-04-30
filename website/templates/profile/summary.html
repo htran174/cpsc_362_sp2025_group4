@@ -1,0 +1,13 @@
+{% extends "profile/base.html" %}
+
+{% block content %}
+  <h1 class="text-2xl font-bold text-gray-800 mb-4">Profile Summary</h1>
+
+  <div class="space-y-2 text-gray-700">
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    {% if user.created_at %}
+      <p><strong>Member since:</strong> {{ user.created_at.strftime('%B %d, %Y') }}</p>
+    {% endif %}
+  </div>
+{% endblock %}
