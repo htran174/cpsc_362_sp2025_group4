@@ -191,6 +191,63 @@ products = [
         "desc": "Regular Fit Cotton Jacket",
         "image": "images/regular fit cotton jacket.jpg"
     },
+    #Rings ID: 41-50
+    {
+        "id": 41,
+        "name": "Golden Heart Ring",
+        "price": 50,
+        "desc": "Ring covered in gold with an incrusted heart-shaped gem.",
+        "image": "images/Golden Heart Ring.png"
+    },
+    {
+        "id": 42,
+        "name": "Golden Heart Ring",
+        "price": 90,
+        "desc": "Silver coated with an incrusted Sapphire gem.",
+        "image": "images/Sapphire Ring.png"
+    },
+    {
+        "id": 43,
+        "name": "Emerald Moss Green Ring",
+        "price": 65,
+        "desc": "Silver coated with an incrusted Emerald gem.",
+        "image": "images/Emerald Ring.png"
+    },
+    {
+        "id": 44,
+        "name": "Ruby Ring",
+        "price": 200,
+        "desc": "A sophisticated ring made with a Ruby gem.",
+        "image": "images/Ruby Ring.png"
+    },
+    {
+        "id": 45,
+        "name": "Tri-Colored Ring",
+        "price": 30,
+        "desc": "A simple yet elegant ring made with 3 different gems combined.",
+        "image": "images/Tri Color Ring.png"
+    },
+    {
+        "id": 46,
+        "name": "Dark Amethyst Ring",
+        "price": 120,
+        "desc": "A dark contrast to enhance the color of the amethyst. For special occassions.",
+        "image": "images/Dark Amethyst Ring.png"
+    },
+    {
+        "id": 47,
+        "name": "Pink Ring",
+        "price": 45,
+        "desc": "Made with granite and pink pearls.",
+        "image": "images/Pink Ring.png"
+    },
+    {
+        "id": 48,
+        "name": "Diamond Ring",
+        "price": 1000,
+        "desc": "Authentic incrusted diamonds imported from our affiliated gold mines.",
+        "image": "images/Diamond Ring.png"
+    },
     #Necklaces ID: 51-60
     {
         "id": 51,

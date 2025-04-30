@@ -120,52 +120,178 @@
   </div>
   
 
-<!-- Pants Products Section -->
+<!-- Rings Products Section -->
 <div class="bg-white">
   <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our Rings</h2>
 
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-      <!-- Rambler Jacket -->
+      <!-- Ruby Ring -->
       <div class="group relative">
-        <a href="{{ url_for('views.product_detail', product_id=31) }}">
-          <img src="{{ url_for('static', filename='images/rambler jacket.png') }}" 
-               alt="Mens Short Sleeve Crew T-Shirt" 
+        <a href="{{ url_for('views.product_detail', product_id=41, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Golden Heart Ring.png') }}" 
+               alt="Golden Heart Ring" 
                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
         </a>
         <div class="mt-4 flex justify-between">
           <div>
             <h3 class="text-sm text-gray-700">
-              <a href="{{ url_for('views.product_detail', product_id=31) }}">
+              <a href="{{ url_for('views.product_detail', product_id=41, from_page=request.path) }}">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Dri Duck Rambler Jacket
+                Golden Heart Ring
               </a>
             </h3>
-            <p class="mt-1 text-sm text-gray-500">Saddle</p>
+            <p class="mt-1 text-sm text-gray-500">Shiny</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$140</p>
+          <p class="text-sm font-medium text-gray-900">$50</p>
         </div>
       </div>
 
-      <!-- Suede Trucker Jacket -->
+      <!-- Sapphire Ring -->
       <div class="group relative">
-        <a href="{{ url_for('views.product_detail', product_id=12) }}">
-          <img src="{{ url_for('static', filename='images/suede jacket.png') }}" 
-               alt="Suede Trucker Jacket" 
+        <a href="{{ url_for('views.product_detail', product_id=42, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Sapphire Ring.png') }}" 
+               alt="Sapphire Ring" 
                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
         </a>
         <div class="mt-4 flex justify-between">
           <div>
             <h3 class="text-sm text-gray-700">
-              <a href="{{ url_for('views.product_detail', product_id=32) }}">
+              <a href="{{ url_for('views.product_detail', product_id=42, from_page=request.path) }}">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Suede Trucker jacket
+                Sapphire Blue Ring
               </a>
             </h3>
-            <p class="mt-1 text-sm text-gray-500">Dusty</p>
+            <p class="mt-1 text-sm text-gray-500">Silver Cover</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$380</p>
+          <p class="text-sm font-medium text-gray-900">$90</p>
+        </div>
+      </div>
+
+      <!-- Emerald Ring -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=43, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Emerald Ring.png') }}" 
+               alt="Emerald Ring" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=43, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Emerald Moss Green Ring
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Coated in silver</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$65</p>
+        </div>
+      </div>
+
+      <!-- Ruby Ring -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=44, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Ruby Ring.png') }}" 
+               alt="Ruby Ring" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=44, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Crimson Red Ruby Ring
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Sangria</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$200</p>
+        </div>
+      </div>
+
+      <!-- Tri Color Ring -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=45, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Tri Color Ring.png') }}" 
+               alt="Tri Color Ring" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=45, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Tri-Colored Ring
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Silver and simple</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$30</p>
+        </div>
+      </div>
+
+      <!-- Dark Amethyst Ring -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=46, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dark Amethyst Ring.png') }}" 
+               alt="Dark Amethyst Ring" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=46, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Dark Amethyst Ring
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">For Elegance</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$120</p>
+        </div>
+      </div>
+
+      <!-- Pink Ring -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=47, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Pink Ring.png') }}" 
+               alt="Pink Ring" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=47, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Pink Pearls Ring
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Cute</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$45</p>
+        </div>
+      </div>
+
+      <!-- Diamond Ring -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=48, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Diamond Ring.png') }}" 
+               alt="Diamond Ring" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=48, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                White Diamond Ring
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Deluxe</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$1000</p>
         </div>
       </div>
 
