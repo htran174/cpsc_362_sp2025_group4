@@ -138,6 +138,16 @@ def place_order():
     # You can pass name or whatever to thank you page if you want
     return render_template('order_confirmation.html', name=name, user=current_user)
 
+@views.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', user=current_user)
+
+@views.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('views.home')) 
 
 @views.route('/catalog')
 def catalog():
