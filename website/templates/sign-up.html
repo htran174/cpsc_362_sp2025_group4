@@ -140,12 +140,26 @@
       {% endwith %}
 
       <form action="{{ url_for('auth.signup') }}" method="POST" onsubmit="return validateForm()">
+        <!-- Full Name -->
+        <div class="mb-4">
+          <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" id="fullname" name="fullname" class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:outline-none" required>
+          <p id="fullnameError" class="text-red-500 text-sm mt-1 hidden">Full name is required.</p>
+        </div>
+      
+        <!-- Birthday -->
+        <div class="mb-4">
+          <label for="birthday" class="block text-sm font-medium text-gray-700">Birthday</label>
+          <input type="date" id="birthday" name="birthday" class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:outline-none" required>
+          <p id="birthdayError" class="text-red-500 text-sm mt-1 hidden">Please select your birthday.</p>
+        </div>
+      
         <!-- Email -->
         <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
           <input type="email" id="email" name="email" class="mt-1 w-full px-3 py-2 border rounded-md shadow-sm focus:ring focus:outline-none" required>
         </div>
-
+      
         <!-- Username -->
         <div class="mb-4">
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
@@ -153,7 +167,7 @@
           <p class="text-xs text-gray-500 mt-1">Min 4 characters. Letters, numbers, and underscores only.</p>
           <p id="usernameError" class="text-red-500 text-sm mt-1 hidden">Invalid username format.</p>
         </div>
-
+      
         <!-- Password -->
         <div class="mb-4">
           <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
@@ -166,7 +180,7 @@
           <p class="text-xs text-gray-500 mt-1">8+ chars, 1 uppercase, 1 number, 1 special character.</p>
           <p id="passwordError" class="text-red-500 text-sm mt-1 hidden">Password does not meet requirements.</p>
         </div>
-
+      
         <!-- Confirm Password -->
         <div class="mb-4">
           <label for="conf_password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
@@ -178,10 +192,10 @@
           </div>
           <p id="confirmError" class="text-red-500 text-sm mt-1 hidden">Passwords do not match.</p>
         </div>
-
+      
         <!-- Submit button -->
         <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md font-medium">Sign Up</button>
-
+      
         <!-- Link to login -->
         <p class="text-center text-sm text-gray-600 mt-4">
           Already have an account?
@@ -198,19 +212,23 @@
     }
 
     function validateForm() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const confirm = document.getElementById("conf_password").value;
+        const fullname = document.getElementById("fullname").value.trim();
+        const birthday = document.getElementById("birthday").value;
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirm = document.getElementById("conf_password").value;
 
-      const userValid = /^[a-zA-Z0-9_]{4,}$/.test(username);
-      const passValid = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(password);
-      const match = password === confirm;
+        const userValid = /^[a-zA-Z0-9_]{4,}$/.test(username);
+        const passValid = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(password);
+        const match = password === confirm;
 
-      document.getElementById("usernameError").classList.toggle("hidden", userValid);
-      document.getElementById("passwordError").classList.toggle("hidden", passValid);
-      document.getElementById("confirmError").classList.toggle("hidden", match);
+        document.getElementById("fullnameError").classList.toggle("hidden", fullname.length > 0);
+        document.getElementById("birthdayError").classList.toggle("hidden", birthday !== "");
+        document.getElementById("usernameError").classList.toggle("hidden", userValid);
+        document.getElementById("passwordError").classList.toggle("hidden", passValid);
+        document.getElementById("confirmError").classList.toggle("hidden", match);
 
-      return userValid && passValid && match;
+        return fullname.length > 0 && birthday && userValid && passValid && match;
     }
   </script>
 </body>

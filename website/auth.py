@@ -1,4 +1,5 @@
 import functools
+from datetime import datetime
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_user, logout_user, login_required, current_user
@@ -27,6 +28,7 @@ def login():
 
     return render_template("sign-in.html")
 
+
 @auth.route('/signup', methods=['POST','GET'])
 def signup():
     if request.method == 'POST':
@@ -34,7 +36,9 @@ def signup():
         username = request.form.get('username')
         password = request.form.get('password')
         conf_password = request.form.get('conf_password')
-
+        full_name = request.form.get('fullname')
+        birthday = request.form.get('birthday')
+        birthday_date = datetime.strptime(birthday, '%Y-%m-%d').date()
         user = User.query.filter_by(username=username).first()
         user_email = User.query.filter_by(email=email).first()
 
@@ -49,7 +53,8 @@ def signup():
         elif password != conf_password:
             flash('Passwords do not match.', category='danger')
         else:
-            new_user = User(username=username, email=email, password=generate_password_hash(password))
+            new_user = User(username=username, email=email, password=generate_password_hash(password), full_name=full_name,
+            birthday=birthday_date)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
