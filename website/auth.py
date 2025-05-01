@@ -41,14 +41,24 @@ def signup():
         user = User.query.filter_by(username=username).first()
         user_email = User.query.filter_by(email=email).first()
 
+        special_characters = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+
         if user:
             flash('Username already exists.', category='danger')
         elif user_email:
             flash('Email address already in use.', category='danger')
         elif len(username) < 4:
             flash('Username is too short.', category='danger')
+        elif any((not char.isalnum() and char != '_') for char in username):
+            flash('Username contains invalid characters.', category='danger')
         elif len(password) < 8:
             flash('Password must be at least 8 characters long.', category='danger')
+        elif not any(char.isupper() for char in password):
+            flash('Password must contain an uppercase character.', category='danger')
+        elif not any(char.isdigit() for char in password):
+            flash('Password must contain a number.', category='danger')
+        elif not any(char in special_characters for char in password):
+            flash('Password must contain a special character.', category='danger')
         elif password != conf_password:
             flash('Passwords do not match.', category='danger')
         else:
