@@ -1,4 +1,5 @@
 import os
+import stripe
 
 from flask import Blueprint, render_template, request, redirect, session, url_for, flash
 from flask_login import current_user, login_required, logout_user
@@ -61,34 +62,49 @@ def remove_from_cart():
 
     return redirect(url_for('checkout.cart'))
 
-@checkout.route('/checkout')
+@checkout.route('/order', methods=['POST'])
 @login_required
-def fcheckout():
+def order():
+    # stripe requires the website to be hosted online to access images
+    # ngrok allows you to expose the flask app online
+    NGROK_PATH = os.getenv('NGROK_PATH')
+
     cart = CartItem.query.filter_by(user_id=current_user.id).all()
-    cart_items = []
-    subtotal = 0
+    print(cart)
+    line_items = []
 
     for product in cart:
         product_object = next((p for p in products if p['id'] == product.legacy_id), None)
-        if product_object:
-            cart_items.append(product_object)
-            subtotal += product_object['price']
 
-    return render_template('checkout.html', cart_items=cart_items, subtotal=subtotal, user=current_user)
+        item = {}
+        price_data = {}
+        product_data = {}
 
-@checkout.route('/place_order', methods=['POST'])
+        local_img_link = product_object['image']
+        img_link = NGROK_PATH + url_for('static', filename=local_img_link)
+        product_data['images'] = [img_link]
+        product_data['name'] = product_object['name']
+
+        price_data['unit_amount'] = product_object['price'] * 100
+        price_data['currency'] = 'usd'
+        price_data['product_data'] = product_data
+
+        item['quantity'] = product.quantity
+        item['price_data'] = price_data
+
+        line_items.append(item)
+
+    checkout_session = stripe.checkout.Session.create(
+        line_items=line_items,
+        payment_method_types=['card'],
+        mode='payment',
+        success_url=request.host_url + url_for('checkout.order_confirmation'),
+        cancel_url=request.host_url + url_for('checkout.cart'),
+        customer_email=current_user.email,
+    )
+    return redirect(checkout_session.url)
+
+@checkout.route('/order_confirmation', methods=['GET'])
 @login_required
-def place_order():
-    name = request.form.get('name')
-    address = request.form.get('address')
-    email = request.form.get('email')
-    payment = request.form.get('payment')
-
-    # After order placed, clear the cart
-    cart = CartItem.query.filter_by(user_id=current_user.id).all()
-    for product in cart:
-        db.session.delete(product)
-    db.session.commit()
-
-    # You can pass name or whatever to thank you page if you want
-    return render_template('order_confirmation.html', name=name, user=current_user)
+def order_confirmation():
+    return render_template('order_confirmation.html')
