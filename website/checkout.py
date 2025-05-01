@@ -107,4 +107,15 @@ def order():
 @checkout.route('/order_confirmation', methods=['GET'])
 @login_required
 def order_confirmation():
+    cart = CartItem.query.filter_by(user_id=current_user.id).all()
+    for product in cart:
+        db.session.delete(product)
+    db.session.commit()
+
     return render_template('order_confirmation.html')
+
+@checkout.route('/order_fail', methods=['GET'])
+@login_required
+def order_fail():
+    flash('Your payment has failed.', category='danger')
+    return redirect(url_for('checkout.cart'))
