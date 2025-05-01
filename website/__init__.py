@@ -14,10 +14,11 @@ def create_app():
     load_dotenv()
 
     app = Flask(__name__)
-    stripe.api_key = os.environ['STRIPE_SECRET_KEY']
     app.config['SECRET_KEY'] = 'temporary_key'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
+
+    stripe.api_key = os.environ['STRIPE_SECRET_KEY']
 
     from .views import views
     from .auth import auth
