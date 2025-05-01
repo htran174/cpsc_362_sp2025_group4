@@ -59,21 +59,6 @@ def product_detail(product_id):
     from_page = request.args.get("from_page", "/")  # default to home
     return render_template('product.html', product=product, from_page=from_page, user=current_user)
 
-@views.route('/profile')
-@login_required
-def profile():
-    return render_template('profile/summary.html', user=current_user, current_tab='summary')
-
-@views.route('/profile/settings')
-@login_required
-def profile_settings():
-    return render_template('profile/settings.html', user=current_user, current_tab='settings')
-
-@views.route('/profile/orders')
-@login_required
-def profile_orders():
-    return render_template('profile/orders.html', user=current_user, current_tab='orders')
-
 @views.route('/catalog')
 def catalog():
     return render_template('catalog.html', products=products, user=current_user)

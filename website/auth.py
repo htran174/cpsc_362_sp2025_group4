@@ -77,6 +77,21 @@ def logout():
     flash('You have been logged out.', category='success')
     return redirect(url_for('auth.login'))
 
+@auth.route('/profile')
+@login_required
+def profile():
+    return render_template('profile/summary.html', user=current_user, current_tab='summary')
+
+@auth.route('/profile/settings')
+@login_required
+def profile_settings():
+    return render_template('profile/settings.html', user=current_user, current_tab='settings')
+
+@auth.route('/profile/orders')
+@login_required
+def profile_orders():
+    return render_template('profile/orders.html', user=current_user, current_tab='orders')
+
 def login_required(view):
     @functools.wraps(view)
     def wrapped_view(*args, **kwargs):

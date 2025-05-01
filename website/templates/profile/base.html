@@ -94,7 +94,7 @@
   
               <!-- Dropdown Menu (stays within the same group) -->
             <div class="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md w-48 py-2 z-20">
-              <a href="{{ url_for('views.profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">View Profile</a>
+              <a href="{{ url_for('auth.profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">View Profile</a>
               <a href="{{ url_for('auth.logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Log out</a>
             </div>
           </div>
@@ -119,17 +119,17 @@
   <!-- Sidebar -->
   <aside class="w-64 bg-white p-6 shadow space-y-4">
     <h2 class="text-lg font-bold text-gray-900 mb-6">My Account</h2>
-    <a href="{{ url_for('views.profile') }}"
+    <a href="{{ url_for('auth.profile') }}"
    class="block px-4 py-2 text-sm font-medium {{ 'text-indigo-600 font-semibold' if current_tab == 'summary' else 'text-gray-700 hover:text-indigo-600' }}">
   Profile Summary
 </a>
 
-<a href="{{ url_for('views.profile_settings') }}"
+<a href="{{ url_for('auth.profile_settings') }}"
    class="block px-4 py-2 text-sm font-medium {{ 'text-indigo-600 font-semibold' if current_tab == 'settings' else 'text-gray-700 hover:text-indigo-600' }}">
   Settings
 </a>
 
-<a href="{{ url_for('views.profile_orders') }}"
+<a href="{{ url_for('auth.profile_orders') }}"
    class="block px-4 py-2 text-sm font-medium {{ 'text-indigo-600 font-semibold' if current_tab == 'orders' else 'text-gray-700 hover:text-indigo-600' }}">
   Order History
 </a>
