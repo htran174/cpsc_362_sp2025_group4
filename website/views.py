@@ -67,10 +67,12 @@ def cart():
     subtotal = 0
 
     for product in cart:
+        quantity = product.quantity
         product_object = next((p for p in products if p['id'] == product.legacy_id), None)
-        if product_object:
-            cart_items.append(product_object)
-            subtotal += product_object['price']
+        for _ in range(quantity):
+            if product_object:
+                cart_items.append(product_object)
+                subtotal += product_object['price']
 
     return render_template('cart.html', cart_items=cart_items, subtotal=subtotal, user=current_user)
 
@@ -101,7 +103,9 @@ def remove_from_cart():
     product_id = int(request.form.get('product_id'))
 
     cart_item = CartItem.query.filter_by(legacy_id=product_id, user_id=current_user.id).first()
-    db.session.delete(cart_item)
+    cart_item.quantity -= 1
+    if cart_item.quantity <= 0:
+        db.session.delete(cart_item)
     db.session.commit()
 
     return redirect(url_for('views.cart'))
@@ -152,8 +156,6 @@ def profile_settings():
 @login_required
 def profile_orders():
     return render_template('profile/orders.html', user=current_user, current_tab='orders')
-
-
 
 @views.route('/catalog')
 def catalog():
