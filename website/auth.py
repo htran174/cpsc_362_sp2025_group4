@@ -28,7 +28,6 @@ def login():
 
     return render_template("sign-in.html")
 
-
 @auth.route('/signup', methods=['POST','GET'])
 def signup():
     if request.method == 'POST':
@@ -46,15 +45,14 @@ def signup():
             flash('Username already exists.', category='danger')
         elif user_email:
             flash('Email address already in use.', category='danger')
-        elif len(username) < 5:
+        elif len(username) < 4:
             flash('Username is too short.', category='danger')
-        elif len(password) < 7:
-            flash('Password must be at least 7 characters long.', category='danger')
+        elif len(password) < 8:
+            flash('Password must be at least 8 characters long.', category='danger')
         elif password != conf_password:
             flash('Passwords do not match.', category='danger')
         else:
-            new_user = User(username=username, email=email, password=generate_password_hash(password), full_name=full_name,
-            birthday=birthday_date)
+            new_user = User(username=username, email=email, password=generate_password_hash(password), full_name=full_name, birthday=birthday_date)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
