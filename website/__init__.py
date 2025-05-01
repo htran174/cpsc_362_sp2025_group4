@@ -1,6 +1,7 @@
 import os
-
 import stripe
+
+from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_manager
@@ -10,6 +11,8 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 
 def create_app():
+    load_dotenv()
+
     app = Flask(__name__)
     stripe.api_key = os.environ['STRIPE_SECRET_KEY']
     app.config['SECRET_KEY'] = 'temporary_key'
