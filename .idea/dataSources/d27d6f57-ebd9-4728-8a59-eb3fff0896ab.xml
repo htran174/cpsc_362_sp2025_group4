@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-04-26.11:36:43</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-05-01.04:41:20</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1590,152 +1590,245 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="payment"/>
-    <table id="556" parent="191" name="product"/>
-    <table id="557" parent="191" name="sqlite_master">
+    <table id="555" parent="191" name="cart_item"/>
+    <table id="556" parent="191" name="payment"/>
+    <table id="557" parent="191" name="product"/>
+    <table id="558" parent="191" name="product_variant"/>
+    <table id="559" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="558" parent="191" name="user"/>
-    <column id="559" parent="555" name="id">
+    <table id="560" parent="191" name="user"/>
+    <column id="561" parent="555" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="560" parent="555" name="user_id">
-      <NotNull>1</NotNull>
+    <column id="562" parent="555" name="legacy_id">
       <Position>2</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <foreign-key id="561" parent="555">
+    <column id="563" parent="555" name="quantity">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="564" parent="555" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="565" parent="555" name="product_id">
+      <Position>5</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="566" parent="555" name="variant_id">
+      <Position>6</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <foreign-key id="567" parent="555">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <key id="562" parent="555">
+    <foreign-key id="568" parent="555">
+      <ColNames>product_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>product</RefTableName>
+    </foreign-key>
+    <foreign-key id="569" parent="555">
+      <ColNames>variant_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>product_variant</RefTableName>
+    </foreign-key>
+    <key id="570" parent="555">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="563" parent="556" name="id">
+    <column id="571" parent="556" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="564" parent="556" name="name">
+    <column id="572" parent="556" name="user_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>VARCHAR(80)|0s</StoredType>
-    </column>
-    <column id="565" parent="556" name="price">
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StoredType>NUMERIC(10,2)|0s</StoredType>
-    </column>
-    <column id="566" parent="556" name="quantity">
-      <NotNull>1</NotNull>
-      <Position>4</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="567" parent="556" name="category">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>VARCHAR(80)|0s</StoredType>
-    </column>
-    <column id="568" parent="556" name="subcategory">
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StoredType>VARCHAR(80)|0s</StoredType>
-    </column>
-    <column id="569" parent="556" name="variant">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-      <StoredType>VARCHAR(80)|0s</StoredType>
-    </column>
-    <column id="570" parent="556" name="is_default_variant">
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-      <StoredType>BOOLEAN|0s</StoredType>
-    </column>
-    <column id="571" parent="556" name="default_variant_id">
-      <Position>9</Position>
-      <StoredType>INTEGER|0s</StoredType>
-    </column>
-    <foreign-key id="572" parent="556">
-      <ColNames>default_variant_id</ColNames>
+    <foreign-key id="573" parent="556">
+      <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>product</RefTableName>
+      <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="573" parent="556" name="sqlite_autoindex_product_1">
-      <ColNames>name</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
     <key id="574" parent="556">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="575" parent="556">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>sqlite_autoindex_product_1</UnderlyingIndexName>
-    </key>
-    <column id="576" parent="557" name="type">
-      <Position>1</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="577" parent="557" name="name">
-      <Position>2</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="578" parent="557" name="tbl_name">
-      <Position>3</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="579" parent="557" name="rootpage">
-      <Position>4</Position>
-      <StoredType>INT|0s</StoredType>
-    </column>
-    <column id="580" parent="557" name="sql">
-      <Position>5</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="581" parent="558" name="id">
+    <column id="575" parent="557" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>INTEGER|0s</StoredType>
     </column>
-    <column id="582" parent="558" name="username">
+    <column id="576" parent="557" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>VARCHAR(80)|0s</StoredType>
     </column>
-    <column id="583" parent="558" name="email">
+    <column id="577" parent="557" name="price">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>NUMERIC(10,2)|0s</StoredType>
+    </column>
+    <column id="578" parent="557" name="stock">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="579" parent="557" name="category">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>VARCHAR(80)|0s</StoredType>
+    </column>
+    <column id="580" parent="557" name="subcategory">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>VARCHAR(80)|0s</StoredType>
+    </column>
+    <column id="581" parent="557" name="image_dir">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>VARCHAR(320)|0s</StoredType>
+    </column>
+    <column id="582" parent="557" name="thumbnail_dir">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>VARCHAR(320)|0s</StoredType>
+    </column>
+    <index id="583" parent="557" name="sqlite_autoindex_product_1">
+      <ColNames>name</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="584" parent="557">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="585" parent="557">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_product_1</UnderlyingIndexName>
+    </key>
+    <column id="586" parent="558" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="587" parent="558" name="variant_name">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>VARCHAR(80)|0s</StoredType>
+    </column>
+    <column id="588" parent="558" name="price">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>NUMERIC(10,2)|0s</StoredType>
+    </column>
+    <column id="589" parent="558" name="stock">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="590" parent="558" name="image_dir">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>VARCHAR(320)|0s</StoredType>
+    </column>
+    <column id="591" parent="558" name="thumbnail_dir">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>VARCHAR(320)|0s</StoredType>
+    </column>
+    <column id="592" parent="558" name="base_product_id">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <foreign-key id="593" parent="558">
+      <ColNames>base_product_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>product</RefTableName>
+    </foreign-key>
+    <key id="594" parent="558">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="595" parent="559" name="type">
+      <Position>1</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="596" parent="559" name="name">
+      <Position>2</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="597" parent="559" name="tbl_name">
+      <Position>3</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="598" parent="559" name="rootpage">
+      <Position>4</Position>
+      <StoredType>INT|0s</StoredType>
+    </column>
+    <column id="599" parent="559" name="sql">
+      <Position>5</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="600" parent="560" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>INTEGER|0s</StoredType>
+    </column>
+    <column id="601" parent="560" name="username">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>VARCHAR(80)|0s</StoredType>
+    </column>
+    <column id="602" parent="560" name="email">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>VARCHAR(120)|0s</StoredType>
     </column>
-    <column id="584" parent="558" name="password">
+    <column id="603" parent="560" name="password">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>VARCHAR(120)|0s</StoredType>
     </column>
-    <index id="585" parent="558" name="sqlite_autoindex_user_1">
+    <column id="604" parent="560" name="full_name">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>VARCHAR(100)|0s</StoredType>
+    </column>
+    <column id="605" parent="560" name="birthday">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <index id="606" parent="560" name="sqlite_autoindex_user_1">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="586" parent="558" name="sqlite_autoindex_user_2">
+    <index id="607" parent="560" name="sqlite_autoindex_user_2">
       <ColNames>email</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="587" parent="558">
+    <key id="608" parent="560">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="588" parent="558">
+    <key id="609" parent="560">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_user_1</UnderlyingIndexName>
     </key>
-    <key id="589" parent="558">
+    <key id="610" parent="560">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_user_2</UnderlyingIndexName>
     </key>

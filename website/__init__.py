@@ -21,6 +21,7 @@ def create_app():
 
     from .views import views
     from .auth import auth
+    from .checkout import checkout
 
     from .models import User, Payment, Product
 
@@ -37,6 +38,7 @@ def create_app():
 
     app.register_blueprint(views, urlprefix='/')
     app.register_blueprint(auth, urlprefix='/')
+    app.register_blueprint(checkout, urlprefix='/')
 
     return app
 
