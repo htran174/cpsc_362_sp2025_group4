@@ -120,7 +120,7 @@
       {% endif %}
       {% endwith %}
 
-      <form action="{{ url_for('auth.login') }}" method="POST" onsubmit="return validateForm()">
+      <form action="{{ url_for('auth.login') }}" method="POST">
         <!-- Username -->
         <div class="mb-4">
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
