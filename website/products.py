@@ -361,5 +361,62 @@ products = [
         "price": 120,
         "desc": "Black Sleeveless dress made with polyester.",
         "image": "images/Dress Black.png"
-    }
+    },
+    # Women Tops IDs 71-80
+    {
+        "id": 71,
+        "name": "Red Long Sleeve Casual Floral Top",
+        "price": 10,
+        "desc": "Casual Feminine shirt with a floral design.",
+        "image": "images/Red Top.png"
+    },
+    {
+        "id": 72,
+        "name": "Green Long Sleeve Casual Floral Top",
+        "price": 10,
+        "desc": "Casual Feminine shirt with a floral design.",
+        "image": "images/Green Top.png"
+    },
+    {
+        "id": 73,
+        "name": "Yellow Long Sleeve Casual Floral Top",
+        "price": 10,
+        "desc": "Casual Feminine shirt with a floral design.",
+        "image": "images/Yellow Top.png"
+    },
+    {
+        "id": 74,
+        "name": "Blue Long Sleeve Casual Floral Top",
+        "price": 10,
+        "desc": "Casual Feminine shirt with a floral design.",
+        "image": "images/Blue Top.png"
+    },
+    {
+        "id": 75,
+        "name": "Black Long Sleeve Casual Floral Top",
+        "price": 10,
+        "desc": "Casual Feminine shirt with a floral design.",
+        "image": "images/Black Top.png"
+    },
+    {
+        "id": 76,
+        "name": "Burgandy Formal Top",
+        "price": 30,
+        "desc": "Burgandy Formal Silk Top for all ocassions.",
+        "image": "images/Burgandy Top.png"
+    },
+    {
+        "id": 77,
+        "name": "Wool Top",
+        "price": 20,
+        "desc": "A light top made from wool.",
+        "image": "images/Wool Top.png"
+    },
+    {
+        "id": 78,
+        "name": "Ruffled Top",
+        "price": 50,
+        "desc": "Ruffled white top made of silk.",
+        "image": "images/White Top.png"
+    },
 ]
