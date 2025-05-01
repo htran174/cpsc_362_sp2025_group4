@@ -6,12 +6,14 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-    payments = db.relationship('Payment', backref='user', lazy=True)
     full_name = db.Column(db.String(100), nullable=False)
     birthday = db.Column(db.Date, nullable=False)
 
+    payments = db.relationship('Payment', backref='user', lazy=True)
+
 class Payment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     
 class Product(db.Model):
@@ -46,9 +48,9 @@ class ProductVariant(db.Model):
 
 class CartItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    legacy_id = db.Column(db.Integer)
     quantity = db.Column(db.Integer, nullable=False)
 
+    legacy_id = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
     variant_id = db.Column(db.Integer, db.ForeignKey('product_variant.id'))
