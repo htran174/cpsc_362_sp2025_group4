@@ -419,4 +419,53 @@ products = [
         "desc": "Ruffled white top made of silk.",
         "image": "images/White Top.png"
     },
+    {
+        "id": 81,
+        "name": "White Long Women Pants",
+        "price": 20,
+        "desc": "A long fleece cotton denim white pants.",
+        "image": "images/White Woman Pants.png"
+    },
+    {
+        "id": 82,
+        "name": "Cream White Vintage Women Pants",
+        "price": 25,
+        "desc": "A creamy colored white pants.",
+        "image": "images/Cream Woman Pants.png"
+    },
+    {
+        "id": 83,
+        "name": "Pink Women Jeans",
+        "price": 30,
+        "desc": "A strawberry pink Jeans for women.",
+        "image": "images/Pink Woman Pants.png"
+    },
+    {
+        "id": 84,
+        "name": "Plaid Fleece Brown Woman Pants",
+        "price": 40,
+        "desc": "A creamy colored white pants.",
+        "image": "images/Brown Woman Pants.png"
+    },
+    {
+        "id": 85,
+        "name": "Blue Loose Silk Woman Pants",
+        "price": 50,
+        "desc": "A loose comfortable silky blue pants for women.",
+        "image": "images/Blue Woman Pants.png"
+    },
+    {
+        "id": 86,
+        "name": "Gray Formal Woman Pants",
+        "price": 35,
+        "desc": "Gray formal elegant dress pants.",
+        "image": "images/Gray Woman Pants.png"
+    },
+    {
+        "id": 87,
+        "name": "Women Navy Jeans",
+        "price": 15,
+        "desc": "A simple navy blue jeans for women.",
+        "image": "images/Woman Jeans.png"
+    },
 ]
