@@ -304,5 +304,62 @@ products = [
         "price": 2200,
         "desc": "Real Purple Amethyst Incrusted Heart-Shaped Necklace.",
         "image": "images/Amethyst Necklace.png"
+    },
+    # Dresses ID: 61-70
+    {
+        "id": 61,
+        "name": "Red Goth Victorian Dress",
+        "price": 50,
+        "desc": "An elaborated cotton dress based on the Victorian Goth era.",
+        "image": "images/Dress Red.png"
+    },
+    {
+        "id": 62,
+        "name": "Blue Floral Vintage Dress",
+        "price": 45,
+        "desc": "A breathable floral cotton dress.",
+        "image": "images/Dress Blue.png"
+    },
+    {
+        "id": 63,
+        "name": "Waist Strapped Winter Brown Dress",
+        "price": 100,
+        "desc": "A winter warm with mixed fabric to keep warm and elegance.",
+        "image": "images/Dress Brown.png"
+    },
+    {
+        "id": 64,
+        "name": "Navy Buttoned Dress",
+        "price": 40,
+        "desc": "Navy Long Skirt Single-piece Bow Strapped Dress.",
+        "image": "images/Dress Navy.png"
+    },
+    {
+        "id": 65,
+        "name": "Yellow Ribbon Dress",
+        "price": 30,
+        "desc": "A summer-spring yellow cotton dress with a ribbon on front.",
+        "image": "images/Dress Yellow.png"
+    },
+    {
+        "id": 66,
+        "name": "Cherry Blossom Bloom Dress",
+        "price": 90,
+        "desc": "A pink dress with designs resembling a blossom cherry tree..",
+        "image": "images/Dress Blossom.png"
+    },
+    {
+        "id": 67,
+        "name": "Peach Floral Dress",
+        "price": 75,
+        "desc": "A light peach color dress.",
+        "image": "images/Dress Peach.png"
+    },
+    {
+        "id": 68,
+        "name": "Sleeveless Closed Black Skirt Dress",
+        "price": 120,
+        "desc": "Black Sleeveless dress made with polyester.",
+        "image": "images/Dress Black.png"
     }
 ]

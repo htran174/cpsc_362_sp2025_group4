@@ -114,60 +114,190 @@
     </div>
   </nav>
     
-<!-- ✅ Jackets Collection Title -->
+<!-- ✅ Dresses Collection Title -->
 <div class="text-center mt-10">
     <h1 class="text-3xl font-bold text-gray-900">Dresses Collection</h1>
   </div>
   
 
-<!-- Pants Products Section -->
+<!-- Dresses Products Section -->
 <div class="bg-white">
   <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <h2 class="text-2xl font-bold tracking-tight text-gray-900">Our Dresses</h2>
 
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-      <!-- Rambler Jacket -->
+      <!-- Red Goth Dress -->
       <div class="group relative">
-        <a href="{{ url_for('views.product_detail', product_id=31) }}">
-          <img src="{{ url_for('static', filename='images/rambler jacket.png') }}" 
-               alt="Mens Short Sleeve Crew T-Shirt" 
+        <a href="{{ url_for('views.product_detail', product_id=61, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Red.png') }}" 
+               alt="Red Goth Dress" 
                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
         </a>
         <div class="mt-4 flex justify-between">
           <div>
             <h3 class="text-sm text-gray-700">
-              <a href="{{ url_for('views.product_detail', product_id=31) }}">
+              <a href="{{ url_for('views.product_detail', product_id=61, from_page=request.path) }}">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Dri Duck Rambler Jacket
+                Red Victorian Goth Dress
               </a>
             </h3>
-            <p class="mt-1 text-sm text-gray-500">Saddle</p>
+            <p class="mt-1 text-sm text-gray-500">Cotton</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$140</p>
+          <p class="text-sm font-medium text-gray-900">$50</p>
         </div>
       </div>
 
-      <!-- Slim Fit Shirt -->
+      <!-- Blue Dress -->
       <div class="group relative">
-        <a href="{{ url_for('views.product_detail', product_id=12) }}">
-          <img src="{{ url_for('static', filename='images/slim fit shirt.jpg') }}" 
-               alt="Slim fit shirt" 
+        <a href="{{ url_for('views.product_detail', product_id=62, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Blue.png') }}" 
+               alt="Blue Dress" 
                class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
         </a>
         <div class="mt-4 flex justify-between">
           <div>
             <h3 class="text-sm text-gray-700">
-              <a href="{{ url_for('views.product_detail', product_id=4) }}">
+              <a href="{{ url_for('views.product_detail', product_id=62, from_page=request.path) }}">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Formal Straight Point Slim Fit Shirt
+                Blue Floral Vintage Dress
               </a>
             </h3>
-            <p class="mt-1 text-sm text-gray-500">White</p>
+            <p class="mt-1 text-sm text-gray-500">Cotton</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$63</p>
+          <p class="text-sm font-medium text-gray-900">$45</p>
         </div>
       </div>
+
+      <!-- Brown Winter Dress -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=63, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Brown.png') }}" 
+               alt="Brown Dress" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=63, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Waist Strapped WInter Brown Dress
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Mixed</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$100</p>
+        </div>
+      </div>
+
+      <!-- Navy Dress -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=64, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Navy.png') }}" 
+               alt="Navy Dress" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=64, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Navy Blue Dress
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Cotton</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$40</p>
+        </div>
+      </div>
+
+      <!-- Yellow Dress -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=65, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Yellow.png') }}" 
+               alt="Yellow Dress" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=65, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Yellow Ribbon Summer Dress
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Cotton</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$30</p>
+        </div>
+      </div>
+
+      <!-- Blossom Dress -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=66, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Blossom.png') }}" 
+               alt="Blossom Dress" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=66, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Cherry Blossom Bloom Dress
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Mixed</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$90</p>
+        </div>
+      </div>
+
+      <!-- Peach Dress -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=57, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Peach.png') }}" 
+               alt="Peach Dress" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=57, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Peach Floral Dress
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Gold Yellow</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$75</p>
+        </div>
+      </div>
+
+      <!-- Black Dress -->
+      <div class="group relative">
+        <a href="{{ url_for('views.product_detail', product_id=68, from_page=request.path) }}">
+          <img src="{{ url_for('static', filename='images/Dress Black.png') }}" 
+               alt="Black Dress" 
+               class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        </a>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="{{ url_for('views.product_detail', product_id=68, from_page=request.path) }}">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Sleeveless Closed Black Skirt Dress
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Polyester</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$120</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
